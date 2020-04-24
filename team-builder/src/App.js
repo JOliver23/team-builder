@@ -19,7 +19,7 @@ function App() {
     const newMember = {
       id: Date.now(),
       name: member.mname,
-      bday: member.bday,
+      bday: member.mbday,
       favNum: member.favNum
     }
     setNewMember([...member, newMember])
@@ -27,8 +27,8 @@ function App() {
 
   return (
     <div>
-      <h1>Team Members: </h1>
       <NewMemberForm addNewMember={addNewMember}/>
+      <h1>Team Members: </h1>
       <TeamMember member={member}/>
       
     </div>

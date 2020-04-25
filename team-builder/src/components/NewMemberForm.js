@@ -1,28 +1,31 @@
 import React, { useState } from 'react';
 
 const NewMemberForm = ({ addNewMember }) => {
-    const [member, setNewMember] = useState({mname: "", mbday: "", favNum: ""})
+    const [member, setNewMember] = useState({ name: "", bday: "", favNum: ""})
 
     const handleChanges = event => {
-        setNewMember({...member, [event.target.name]: event.target.value});
+        setNewMember({ ...member, [event.target.name]: event.target.value });
     }
     console.log("member state: ", member);
 
-    const FormSubmit = event => {
+    const formSubmit = event => { 
+        console.log("submit obj: ", event);
+        console.log("form props: ", member);
         event.preventDefault();
+        console.log("post add", member)
         addNewMember(member);
-        setNewMember({name: "", bday: "", favNum: ""})
         
+        setNewMember({ name: "", bday: "", favNum: ""})
     };
 
     return (
-        <form onSubmit={FormSubmit}>
+        <form onSubmit={formSubmit}>
             <label htmlFor="member">Member Name: </label>
             <input 
                 type="text" 
                 id="member"
                 placeholder="Member Name"
-                name="mname"
+                name="name"
                 value={member.name}
                 onChange={handleChanges}
             />
@@ -32,7 +35,7 @@ const NewMemberForm = ({ addNewMember }) => {
                 id="bday"
                 type="date"
                 placeholder="2020-04-20"
-                name="mbday"
+                name="bday"
                 value={member.bday}
                 onChange={handleChanges}
             />

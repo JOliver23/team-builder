@@ -8,9 +8,9 @@ const TeamMember = props => {
             new members from data list; see form management Notes.js ex */}
             {props.member.map(member => (
                 <div className="member-card" key={member.id}>
-                    <h2>{props.member.name}<span>{props.member.favNum}</span></h2>
-                    <p>DOB: {props.member.bday}</p>
-                    <h3>Member Id: {props.member.id}</h3>
+                    <h2>{member.name}<span>{member.favNum}</span></h2>
+                    <p>DOB: {member.bday}</p>
+                    <h3>Member Id: {member.id}</h3>
 
                 </div>
             ))}

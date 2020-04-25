@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import TeamMember from './components/TeamMember';
@@ -15,14 +16,17 @@ function App() {
     
   ]);
 
-  const addNewMember = member => {
+  const addNewMember = members => {
+    
     const newMember = {
       id: Date.now(),
-      name: member.mname,
-      bday: member.mbday,
-      favNum: member.favNum
-    }
-    setNewMember([...member, newMember])
+      name: members.name,
+      bday: members.bday,
+      favNum: members.favNum
+    };
+    console.log(member);
+    setNewMember([...member, newMember, ]);
+  
   };
 
   return (

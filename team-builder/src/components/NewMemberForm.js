@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { StyledForm } from '../HolderData';
 
 const NewMemberForm = ({ addNewMember }) => {
     const [member, setNewMember] = useState({ name: "", bday: "", favNum: ""})
@@ -19,7 +20,7 @@ const NewMemberForm = ({ addNewMember }) => {
     };
 
     return (
-        <form onSubmit={formSubmit}>
+        <StyledForm onSubmit={formSubmit}>
             <label htmlFor="member">Member Name: </label>
             <input 
                 type="text" 
@@ -51,7 +52,7 @@ const NewMemberForm = ({ addNewMember }) => {
             />
             <br />
             <button type="submit">Add Member</button>
-        </form>
+        </StyledForm>
     )
 }
 

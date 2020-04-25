@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import TeamMember from './components/TeamMember';
 import NewMemberForm from './components/NewMemberForm';
+import { AppStyle, TitleSty } from './HolderData';
 
 function App() {
   const [member, setNewMember] = useState([
@@ -30,12 +31,12 @@ function App() {
   };
 
   return (
-    <div>
+    <AppStyle>
       <NewMemberForm addNewMember={addNewMember}/>
-      <h1>Team Members: </h1>
+      <TitleSty>Team Members: </TitleSty>
       <TeamMember member={member}/>
       
-    </div>
+    </AppStyle>
   );
 }
 
